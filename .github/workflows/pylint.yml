@@ -1,7 +1,10 @@
+```yaml
 name: Pylint
-
-on: [push]
-
+# modificamos para añadir paths
+on:
+  push:
+    paths:
+      - '**.py'
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,3 +24,4 @@ jobs:
     - name: Analysing the code with pylint
       run: |
         pylint $(git ls-files '*.py')
+```
